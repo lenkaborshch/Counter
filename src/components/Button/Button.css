@@ -1,0 +1,17 @@
+.button {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    background: #75b7ff;
+    box-shadow: 0 -3px #61a8ff inset;
+    transition: 0.2s;
+}
+
+.button:disabled {
+    background: gray;
+    box-shadow: none;
+}
