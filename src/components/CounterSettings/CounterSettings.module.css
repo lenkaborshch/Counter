@@ -1,0 +1,40 @@
+.settingsWrapper {
+  padding: 10px;
+  border: #4594ff 2px solid;
+  border-radius: 5%;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button {
+  border: #4594ff 2px solid;
+  border-radius: 10%;
+  padding: 10px;
+  vertical-align: center;
+  min-width: 230px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.displaySettings {
+  width: 200px;
+  padding: 30px;
+  text-align: center;
+  background-color: #5fccff;
+  border-radius: 5%;
+  font-size: 23px;
+  color: black;
+}
+
+.input {
+  max-width: 50px;
+}
+
+.input.error {
+  background-color: #ff0024;
+}

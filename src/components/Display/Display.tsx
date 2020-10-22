@@ -2,11 +2,12 @@ import React from 'react';
 
 type DisplayPropsType = {
     counter: number
+    maxValue: number
 }
 
 function Display(props: DisplayPropsType) {
     let displayStyle = {
-        color: props.counter < 5 ? 'black' : 'red',
+        color: props.counter < props.maxValue ? 'black' : 'red',
     }
 
     return (

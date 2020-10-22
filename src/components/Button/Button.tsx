@@ -3,21 +3,20 @@ import './Button.css';
 
 type ButtonPropsType = {
     onClick: () => void
-    counter: number
-    title: string
+    title: 'inc' | 'reset' | 'set'
     maxValue: number
-    minValue: number
+    startValue: number
+    disabled: boolean
 }
 
 function Button(props: ButtonPropsType) {
 
-    let disabledType = props.title === 'inc' ? props.counter === props.maxValue : props.counter === props.minValue;
-
     return (
         <span>
             <button className='button'
-                    disabled={disabledType}
-                    onClick={props.onClick}>{props.title}
+                    disabled={props.disabled}
+                    onClick={props.onClick}>
+                {props.title}
             </button>
         </span>
     )
