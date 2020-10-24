@@ -1,5 +1,5 @@
-import React from 'react';
-import './Button.css';
+import React from 'react'
+import './Button.css'
 
 type ButtonPropsType = {
     onClick: () => void
@@ -9,7 +9,7 @@ type ButtonPropsType = {
     disabled: boolean
 }
 
-function Button(props: ButtonPropsType) {
+export function Button(props: ButtonPropsType) {
 
     return (
         <span>
@@ -21,5 +21,3 @@ function Button(props: ButtonPropsType) {
         </span>
     )
 }
-
-export default Button;

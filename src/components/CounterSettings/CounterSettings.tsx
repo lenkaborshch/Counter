@@ -1,5 +1,5 @@
-import React from 'react';
-import Button from "../Button/Button";
+import React, {ChangeEvent} from 'react'
+import {Button} from "../Button/Button"
 import style from './CounterSettings.module.css'
 
 type SettingsCounterPropsType = {
@@ -8,13 +8,20 @@ type SettingsCounterPropsType = {
     changeStartValue: (startValue: number) => void
     changeMaxValue: (maxValue: number) => void
     disabled: boolean
-    changeValuesForCounter: () => void
+    onButtonSetClick: () => void
 }
 
-function CounterSettings(props: SettingsCounterPropsType) {
+export function CounterSettings(props: SettingsCounterPropsType) {
 
-    const inputStartValueClass = ` ${style.input} ${props.startValue < 0 || props.startValue === props.maxValue ? style.error : ''} `
+    const inputStartValueClass = ` ${style.input} ${props.startValue < 0 || props.startValue >= props.maxValue ? style.error : ''} `
     const inputMaxValueClass = ` ${style.input} ${props.maxValue <= props.startValue ? style.error : ''} `
+
+    const onChangeStartValue = (e: ChangeEvent<HTMLInputElement>) => {
+        props.changeStartValue(Number(e.target.value))
+    }
+    const onChangeMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
+        props.changeMaxValue(Number(e.target.value))
+    }
 
     return (
         <div className={style.settingsWrapper}>
@@ -22,24 +29,19 @@ function CounterSettings(props: SettingsCounterPropsType) {
                 <div>
                     Start value: <input className={inputStartValueClass}
                                         type='number' value={props.startValue}
-                                        onChange={(e) => props.changeStartValue(Number(e.target.value))}/>
+                                        onChange={onChangeStartValue}/>
                 </div>
                 <div>
                     Max value: <input
                     className={inputMaxValueClass}
                     type='number' value={props.maxValue}
-                    onChange={(e) => {
-                        props.changeMaxValue(Number(e.target.value))
-                    }}/>
+                    onChange={onChangeMaxValue}/>
                 </div>
             </div>
             <div className={style.button}>
-                <Button onClick={props.changeValuesForCounter} title='set' startValue={props.startValue}
+                <Button onClick={props.onButtonSetClick} title='set' startValue={props.startValue}
                         maxValue={props.maxValue} disabled={props.disabled}/>
             </div>
         </div>
-    );
+    )
 }
-
-
-export default CounterSettings

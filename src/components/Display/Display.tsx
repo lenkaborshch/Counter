@@ -1,20 +1,26 @@
-import React from 'react';
+import React from 'react'
 
 type DisplayPropsType = {
     counter: number
+    startValue: number
     maxValue: number
+    isDataEntered: boolean
 }
 
-function Display(props: DisplayPropsType) {
+export function Display(props: DisplayPropsType) {
+
+    const errorInEnteredData = props.startValue < 0 || props.startValue >= props.maxValue
+
     let displayStyle = {
-        color: props.counter < props.maxValue ? 'black' : 'red',
+        color: props.counter === props.maxValue || errorInEnteredData ? 'red' : 'black',
+        fontSize: props.isDataEntered ? '50px' : '35px'
     }
 
     return (
         <div style={displayStyle}>
-            {props.counter}
+            {props.isDataEntered
+                ? props.counter
+                : errorInEnteredData ? 'Enter correct value' : 'Click set'}
         </div>
     )
 }
-
-export default Display;
