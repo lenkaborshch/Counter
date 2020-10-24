@@ -16,12 +16,12 @@ export function Counter(props: CounterPropsType) {
 
     const increment = () => {
         if (props.counter < props.maxValue) {
-            props.setCounter(props.counter + 1);
+            props.setCounter(props.counter + 1)
         }
     }
 
     const reset = () => {
-        props.setCounter(props.startValue);
+        props.setCounter(props.startValue)
     }
 
     return (

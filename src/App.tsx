@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
 import {Counter} from './components/Counter/Counter'
-import {CounterSettings} from "./components/CounterSettings/CounterSettings"
+import {CounterSettings} from './components/CounterSettings/CounterSettings'
 
 export function App() {
 

@@ -1,5 +1,5 @@
 import React, {ChangeEvent} from 'react'
-import {Button} from "../Button/Button"
+import {Button} from '../Button/Button'
 import style from './CounterSettings.module.css'
 
 type SettingsCounterPropsType = {
