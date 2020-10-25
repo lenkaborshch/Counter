@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import {App} from './App'
 import * as serviceWorker from './serviceWorker'
+import {CounterWithOneScreen} from './components/CounterWithOneScreen/CounterWithOneScreen'
 
 ReactDOM.render(
     <React.StrictMode>
-        <App/>
+        <div className='wrapper'>
+            <CounterWithOneScreen/>
+            <App/>
+        </div>
     </React.StrictMode>,
     document.getElementById('root')
 )

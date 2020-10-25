@@ -48,7 +48,7 @@ export function App() {
     }
 
     return (
-        <div className='appHeader'>
+        <div>
             <div className='screen'>
                 <Counter maxValue={maxValue} startValue={startValue}
                          counter={counter} setCounter={setCounter}

@@ -1,7 +1,7 @@
 import React from 'react'
-import {Display} from '../Display/Display'
+import {Display} from './Display/Display'
 import {Button} from '../Button/Button'
-import './Counter.css'
+import style from './Counter.module.css'
 
 type CounterPropsType = {
     startValue: number
@@ -25,12 +25,12 @@ export function Counter(props: CounterPropsType) {
     }
 
     return (
-        <div className='counterWrapper'>
-            <div className='display'>
+        <div className={style.counterWrapper}>
+            <div className={style.display}>
                 <Display counter={props.counter} isDataEntered={props.isDataEntered}
                          startValue={props.startValue} maxValue={props.maxValue}/>
             </div>
-            <div className='buttons'>
+            <div className={style.buttonsField}>
                 <Button disabled={props.counter === props.maxValue || props.disabled} onClick={increment}
                         title='inc' maxValue={props.maxValue} startValue={props.startValue}/>
                 <Button disabled={props.counter === props.startValue || props.disabled} onClick={reset}

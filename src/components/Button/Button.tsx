@@ -1,5 +1,5 @@
 import React from 'react'
-import './Button.css'
+import style from './Button.module.css'
 
 type ButtonPropsType = {
     onClick: () => void
@@ -13,7 +13,7 @@ export function Button(props: ButtonPropsType) {
 
     return (
         <span>
-            <button className='button'
+            <button className={style.button}
                     disabled={props.disabled}
                     onClick={props.onClick}>
                 {props.title}

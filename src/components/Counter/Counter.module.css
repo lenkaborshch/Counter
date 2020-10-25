@@ -1,4 +1,4 @@
-.settingsWrapper {
+.counterWrapper {
     padding: 10px;
     border: #4594ff 2px solid;
     border-radius: 10px;
@@ -10,22 +10,21 @@
     align-items: center;
 }
 
-.displaySettings {
+.display {
     width: 200px;
     height: 60px;
     padding: 30px;
     text-align: center;
     background-color: #5fccff;
     border-radius: 10px;
-    font-size: 23px;
-    color: black;
+    line-height: 35px;
 }
 
 .buttonsField {
     border: #4594ff 2px solid;
     padding: 10px;
     vertical-align: center;
-    min-width: 230px;
+    width: 230px;
     display: flex;
     justify-content: space-around;
     align-items: center;
